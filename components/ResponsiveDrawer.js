@@ -11,13 +11,12 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+// import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-
-//https://qiita.com/sand/items/d4b6f39b5fe6027064b4
+import DashBoard from '../pages/DashBoard';
 
 const drawerWidth = 200; //サイドバー幅
 
@@ -58,36 +57,37 @@ const styles = theme => ({
 
 
 class ResponsiveDrawer extends React.Component {
-  state = { mobileOpen: false, };
+  state = { mobileOpen: false, menu: 1 };
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
   };
 
+  onClick = (id) => {
+    this.setState(state => ({ menu: id }));
+  }
+
   render() {
     const { classes, theme } = this.props;
+    const displayMenu = this.displayMenu;
+    console.log('', displayMenu);
 
-    console.log(JSON.stringify(styles(theme)))  // ** (1)
-    console.log(theme.breakpoints.up('sm'))     // ** (2)
+    // console.log(JSON.stringify(styles(theme)))
+    // console.log(theme.breakpoints.up('sm'))
 
     const drawer = (
       <div>
         <div className={classes.toolbar} />
-        <Divider />
+        {/* <Divider /> */}
         <List>
-          {['Inbox', 'その２', 'その３', 'その４'].map((text, index) => (
-            <ListItem button key={index}>
-              {/* サイドバーのアイコン設定 */}
-              <ListItemIcon>
-                {text == 'Inbox' ? <InboxIcon /> : ''}
-                {text == 'その２' ? <MailIcon /> : ''}
-                {text == 'その３' ? <MailIcon /> : ''}
-                {text == 'その４' ? <MailIcon /> : ''}
-
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button key={1} onClick={(e) => { this.onClick(1) }}>
+            <ListItemIcon> <InboxIcon /> </ListItemIcon>
+            <ListItemText primary={'その１'} />
+          </ListItem>
+          <ListItem button key={2} onClick={(e) => { this.onClick(2) }}>
+            <ListItemIcon> <InboxIcon /> </ListItemIcon>
+            <ListItemText primary={'その２'} />
+          </ListItem>
         </List>
         {/* <Divider />*/}
       </div>
@@ -120,9 +120,7 @@ class ResponsiveDrawer extends React.Component {
               anchor={theme.direction === 'rtl' ? 'right' : 'left'}
               open={this.state.mobileOpen}
               onClose={this.handleDrawerToggle}
-              classes={{
-                paper: classes.drawerPaper,
-              }}
+              classes={{ paper: classes.drawerPaper, }}
             >
               {drawer}
             </Drawer>
@@ -139,18 +137,14 @@ class ResponsiveDrawer extends React.Component {
             </Drawer>
           </Hidden>
         </nav>
-        {/* <main className={classes.content}>
-          <div className={classes.toolbar} />
-          <Typography paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt
-          </Typography>
-        </main> */}
+
+        {/* 選択したコンポーネントを表示 */}
+        {this.state.menu == 1 && <DashBoard />}
+        {this.state.menu == 2 && <DashBoard />}
       </div>
     );
   }
 }
-
 
 ResponsiveDrawer.propTypes = {
   classes: PropTypes.object.isRequired,
