@@ -17,6 +17,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import DashBoard from '../pages/DashBoard';
+import CSV from '../pages/CSV';
 
 const drawerWidth = 200; //サイドバー幅
 
@@ -65,12 +66,11 @@ class ResponsiveDrawer extends React.Component {
 
   onClick = (id) => {
     this.setState(state => ({ menu: id }));
+
   }
 
   render() {
     const { classes, theme } = this.props;
-    const displayMenu = this.displayMenu;
-    console.log('', displayMenu);
 
     // console.log(JSON.stringify(styles(theme)))
     // console.log(theme.breakpoints.up('sm'))
@@ -86,7 +86,7 @@ class ResponsiveDrawer extends React.Component {
           </ListItem>
           <ListItem button key={2} onClick={(e) => { this.onClick(2) }}>
             <ListItemIcon> <InboxIcon /> </ListItemIcon>
-            <ListItemText primary={'その２'} />
+            <ListItemText primary={'CSV データ'} />
           </ListItem>
         </List>
         {/* <Divider />*/}
@@ -140,7 +140,7 @@ class ResponsiveDrawer extends React.Component {
 
         {/* 選択したコンポーネントを表示 */}
         {this.state.menu == 1 && <DashBoard />}
-        {this.state.menu == 2 && <DashBoard />}
+        {this.state.menu == 2 && <CSV />}
       </div>
     );
   }

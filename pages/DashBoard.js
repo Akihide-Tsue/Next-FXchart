@@ -6,7 +6,7 @@ const DashBoard = ({ }) => {
   const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
 
   const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
-  console.log(rows)
+  // console.log(rows)
 
   return isFetching ? (
     <>
