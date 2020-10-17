@@ -16,8 +16,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
+//Pages
 import DashBoard from '../pages/DashBoard';
 import CSV from '../pages/CSV';
+import TradeHistory from '../pages/TradeHistory';
 
 const drawerWidth = 200; //サイドバー幅
 
@@ -41,6 +43,10 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },
+  },
+  InboxIcon: {
+    width: 25,
+    height: 25,
   },
   toolbar: theme.mixins.toolbar,
   // Override - Drawerの中で  classes={{ paper: classes.drawerPaper, }}
@@ -78,16 +84,23 @@ class ResponsiveDrawer extends React.Component {
     const drawer = (
       <div>
         <div className={classes.toolbar} />
-        {/* <Divider /> */}
+        <Divider />
         <List>
           <ListItem button key={1} onClick={(e) => { this.onClick(1) }}>
-            <ListItemIcon> <InboxIcon /> </ListItemIcon>
-            <ListItemText primary={'その１'} />
+            <ListItemIcon> <InboxIcon className={classes.InboxIcon} /> </ListItemIcon>
+            <ListItemText primary={'月別'} />
           </ListItem>
+          <Divider />
           <ListItem button key={2} onClick={(e) => { this.onClick(2) }}>
-            <ListItemIcon> <InboxIcon /> </ListItemIcon>
+            <ListItemIcon> <InboxIcon className={classes.InboxIcon}/> </ListItemIcon>
+            <ListItemText primary={'取引履歴'} />
+          </ListItem>
+          <Divider />
+          <ListItem button key={3} onClick={(e) => { this.onClick(3) }}>
+            <ListItemIcon> <InboxIcon className={classes.InboxIcon}/> </ListItemIcon>
             <ListItemText primary={'CSV データ'} />
           </ListItem>
+          <Divider />
         </List>
         {/* <Divider />*/}
       </div>
@@ -140,7 +153,8 @@ class ResponsiveDrawer extends React.Component {
 
         {/* 選択したコンポーネントを表示 */}
         {this.state.menu == 1 && <DashBoard />}
-        {this.state.menu == 2 && <CSV />}
+        {this.state.menu == 2 && <TradeHistory />}
+        {this.state.menu == 3 && <CSV />}
       </div>
     );
   }

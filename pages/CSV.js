@@ -2,7 +2,7 @@ import useGoogleSpreadsheet from 'use-google-spreadsheet';
 import Spinner from 'react-spinner-material';
 import CsvDownload from 'react-json-to-csv'
 
-const CSV = ({ }) => {
+const CSV = () => {
   const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
   const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
 
