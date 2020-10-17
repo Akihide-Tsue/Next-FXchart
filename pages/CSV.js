@@ -1,13 +1,9 @@
-import useGoogleSpreadsheet from 'use-google-spreadsheet';
 import Spinner from 'react-spinner-material';
 import CsvDownload from 'react-json-to-csv'
 
-const CSV = () => {
-  const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
-  const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
-
-  const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
-
+const CSV = (props) => {
+  const isFetching = props.isFetching
+  const rows = props.rows
   return isFetching ? (
     <>
       <Spinner radius={120} color={"#3F52B5"} stroke={8} visible={true} />

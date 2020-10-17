@@ -1,8 +1,13 @@
 import Head from 'next/head'
 import DashBoard from './DashBoard'
 import ResponsiveDrawer from '../components/ResponsiveDrawer'
+import useGoogleSpreadsheet from 'use-google-spreadsheet';
 
 export default function Home() {
+
+  const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
+  const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
+  const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
   return (
     <div className="container">
       <Head>
@@ -10,7 +15,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ResponsiveDrawer/>
+      <ResponsiveDrawer rows={rows} isFetching={isFetching}/>
       {/* <DashBoard /> */}
 
       <footer>

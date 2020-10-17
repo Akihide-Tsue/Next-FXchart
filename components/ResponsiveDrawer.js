@@ -72,11 +72,11 @@ class ResponsiveDrawer extends React.Component {
 
   onClick = (id) => {
     this.setState(state => ({ menu: id }));
-
   }
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes, theme, rows, isFetching } = this.props;
+    console.log('', this.props);
 
     // console.log(JSON.stringify(styles(theme)))
     // console.log(theme.breakpoints.up('sm'))
@@ -152,9 +152,9 @@ class ResponsiveDrawer extends React.Component {
         </nav>
 
         {/* 選択したコンポーネントを表示 */}
-        {this.state.menu == 1 && <DashBoard />}
-        {this.state.menu == 2 && <TradeHistory />}
-        {this.state.menu == 3 && <CSV />}
+        {this.state.menu == 1 && <DashBoard rows={rows} isFetching={isFetching}/>}
+        {this.state.menu == 2 && <TradeHistory rows={rows} isFetching={isFetching} />}
+        {this.state.menu == 3 && <CSV rows={rows} isFetching={isFetching} />}
       </div>
     );
   }
