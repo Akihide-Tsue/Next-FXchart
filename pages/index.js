@@ -1,4 +1,19 @@
 import Head from 'next/head'
+import DashBoard from './DashBoard'
+
+// export async function getStaticProps() {
+//   // GASでスプレッドシートをAPI通信により取得
+//   const url = "https://script.google.com/macros/s/AKfycbzQjJ7XzjykZ1Lra3sPglfnu2gDTcBHwmNCJLdNSRnETNQIVBX8/exec";
+//   const res = await fetch(url);
+//   console.log('res', res);
+//   const json = await res.json();
+//   if (json.status == 200) {
+//     console.log("中身", json.data);
+//   }
+// }
+
+
+
 
 export default function Home() {
   return (
@@ -9,7 +24,10 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1 className="title">
+        <DashBoard />
+
+
+        {/* <h1 className="title">
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
@@ -45,7 +63,7 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
 
       <footer>
