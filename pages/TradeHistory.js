@@ -11,7 +11,7 @@ const DashBoard = (props) => {
     </>
   ) : rows ? (
     <>
-
+      履歴
       {console.log('', rows[0])}
       {rows[0].Month}:{rows[0].Balance}
 
