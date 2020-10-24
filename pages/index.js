@@ -1,9 +1,11 @@
 import React from 'react'
 import Head from 'next/head'
-import SidePanel from '../components/SidePanel'
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+
+import SidePanel from '../components/SidePanel/SidePanel'
 
 export default function index() {
   return (
@@ -22,7 +24,8 @@ export default function index() {
 
       <SidePanel />
 
-      {/* globalなcss: style jsxで記載する方法、これ以外はcomponent/layout.module.scssに*/}
+      {/* globalなcss:基本はcomponent/layout.module.scssに */}
+      {/* _app.jsで読み込んでもOK */}
       <style jsx global>{`
         html, body {
           padding: 0;

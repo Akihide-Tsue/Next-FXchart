@@ -1,0 +1,9 @@
+.root {
+  flex-grow: 1;
+  display: flex;
+  height: 90vh;
+  margin-top: 80px; //headerの高さ分
+}
+.SidePanel {
+  min-width: 50px; //TODO:暫定 スマホ用に
+}

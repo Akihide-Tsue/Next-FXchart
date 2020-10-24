@@ -2,8 +2,7 @@ const Achievement = () => {
 
   return (
     <>
-      <div>概要</div>
-      <div>概要</div>
+      <div>達成率</div>
     </>
   )
 }

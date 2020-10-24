@@ -1,17 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { makeStyles } from '@material-ui/core/styles';
+
 import Box from '@material-ui/core/Box';
 import Tab from '@material-ui/core/Tab';
 import Tabs from '@material-ui/core/Tabs';
 import Typography from '@material-ui/core/Typography';
-
 //各タブ
-import Monthly from './Monthly';
-import About from './About';
-import CSV from './CSV';
-import Achievement from './Achievement';
-import useGoogleSpreadsheet from 'use-google-spreadsheet';//API
+import Monthly from '../Monthly/Monthly';
+import About from '../About/About';
+import CSV from '../CSV/CSV';
+import Achievement from '../Achievement/Achievement';
+//API
+import useGoogleSpreadsheet from 'use-google-spreadsheet';
+//css module
+import Layout from '../layout/layout'
+import styles from './SidePanel.module.scss'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -25,7 +28,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box p={3}>
+        <Box>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -55,19 +58,19 @@ export default function SidePanel() {
   const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
   const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
 
-  const handleChange = (event, newValue) => {
+  const handleChange = (_, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <div className='root'>
+    <div className={styles.root}>
       <Tabs
         orientation="vertical"
         variant="scrollable"
         value={value}
         onChange={handleChange}
         aria-label="Vertical"
-        className='tabs'
+        className={styles.SidePanel}
         textColor="primary"
         indicatorColor="primary"
         selectionFollowsFocus={true}
@@ -80,37 +83,40 @@ export default function SidePanel() {
         {/* <Tab label="Item Six" {...a11yProps(5)} />
         <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>
-      <TabPanel value={value} index={0} className="TabPanel">
-        <About />
+      <TabPanel value={value} index={0}>
+        <Layout>
+          <About />
+        </Layout>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Monthly rows={rows} isFetching={isFetching} />
+        <Layout>
+          <Monthly rows={rows} isFetching={isFetching} />
+        </Layout>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <Layout>
+          全データ
+           {/* <History/> */}
+        </Layout>
       </TabPanel>
       <TabPanel value={value} index={3}>
-        <CSV rows={rows} />
+        <Layout>
+          <CSV rows={rows} />
+        </Layout>
       </TabPanel>
       <TabPanel value={value} index={4}>
-        <Achievement />
+        <Layout>
+          <Achievement />
+        </Layout>
       </TabPanel>
       {/* <TabPanel value={value} index={5}>
-        Item Six
+        <Layout>
+        </Layout>
       </TabPanel>
       <TabPanel value={value} index={6}>
-        Item Seven
+        <Layout>
+        </Layout>
       </TabPanel> */}
-
-      <style jsx>{`
-        .root {
-          flex-grow: 1;
-          // background-color: #eeee;//indexjsのみで
-          display: flex;
-          height: 100vh;
-          margin-top:80px; //header高さ
-        },
-        `}</style>
     </div>
   );
 }
