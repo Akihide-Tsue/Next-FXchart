@@ -8,7 +8,7 @@ const CSV = (props) => {
   </>
   ) :
     //CSVが取得できなかった場合
-    (<span>No Data</span >))
+    (<span>データを取得できませんでした</span >))
 }
 
 export default CSV;

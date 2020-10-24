@@ -1,22 +1,22 @@
 import CircularProgress from '@material-ui/core/CircularProgress';
-import MonthlyTable from './MonthlyTable/MonthlyTable'
+import HistoryTable from './HistoryTable/HistoryTable'
 //css module
-import styles from './Monthly.module.scss'
+// import styles from './History.module.scss'
 
-const Monthly = (props) => {
-  const isFetching = props.isFetching
-  const rows = props.rows
+const History = (props) => {
+  const isFetching = props.isFetching2
+  const rows = props.rows2
   return isFetching ? (
     <>
       <CircularProgress className={styles.spinner} size={100} />
     </>
   ) : rows ? (
-    <>
-        <MonthlyTable rows={rows} className={styles.table}/>
+      <>
+      <HistoryTable rows={rows} className={styles.table} />
     </>
   ) :
       //取得できない/シートが空白の場合
       <span>データを取得できませんでした</span >;
 };
 
-export default Monthly;
+export default History;

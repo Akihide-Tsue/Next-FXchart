@@ -10,6 +10,7 @@ import Monthly from '../Monthly/Monthly';
 import About from '../About/About';
 import CSV from '../CSV/CSV';
 import Achievement from '../Achievement/Achievement';
+import History from '../History/History';
 //API
 import useGoogleSpreadsheet from 'use-google-spreadsheet';
 //css module
@@ -56,7 +57,14 @@ export default function SidePanel() {
   //APIデータ:12ヶ月分
   const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
   const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
-  const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
+  const { rows1, isFetching1 } = useGoogleSpreadsheet(shareUrl, API_KEY);
+  console.log('rows1', rows1)
+
+  //APIデータ:CSVデータ
+  const url2 = 'https://docs.google.com/spreadsheets/d/1TP8egieQMDbOFAOo-s6hmP7n-OhiKq1QsKWnCeosQ3Q/edit#gid=0';
+  // const API_KEY2 = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
+  const { rows2, isFetching2 } = useGoogleSpreadsheet(url2, API_KEY);
+  console.log('rows2',)
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
@@ -90,18 +98,17 @@ export default function SidePanel() {
       </TabPanel>
       <TabPanel value={value} index={1}>
         <Layout>
-          <Monthly rows={rows} isFetching={isFetching} />
+          <Monthly rows={rows1} isFetching={isFetching1} />
         </Layout>
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Layout>
-          全データ
-           {/* <History/> */}
+          <History rows={rows2} isFetching={isFetching2} />
         </Layout>
       </TabPanel>
       <TabPanel value={value} index={3}>
         <Layout>
-          <CSV rows={rows} />
+          <CSV rows={rows1} />
         </Layout>
       </TabPanel>
       <TabPanel value={value} index={4}>
