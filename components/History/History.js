@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
-  decrement,
+  // decrement,
   increment,
-  incrementByAmount,
-  incrementAsync,
+  // incrementByAmount,
+  // incrementAsync,
   selectCount,
-} from '../../app/counterSlice';
+} from '../../app/historySlice';
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import HistoryTable from './HistoryTable/HistoryTable'
@@ -19,7 +19,7 @@ const History = (props) => {
 
   const count = useSelector(selectCount);
   const dispatch = useDispatch();
-  const [incrementAmount, setIncrementAmount] = useState('2');
+  // const [incrementAmount, setIncrementAmount] = useState('2');
 
   return isFetching ? (
     <>
