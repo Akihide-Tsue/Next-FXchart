@@ -61,10 +61,10 @@ export default function SidePanel() {
   console.log('rows', rows)
 
   //APIデータ:CSVデータ
-  const url2 = 'https://docs.google.com/spreadsheets/d/1TP8egieQMDbOFAOo-s6hmP7n-OhiKq1QsKWnCeosQ3Q/edit#gid=0';
-  // const API_KEY2 = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
-  const { rows2, isFetching2 } = useGoogleSpreadsheet(url2, API_KEY);
-  console.log('rows2',)
+  // const url2 = 'https://docs.google.com/spreadsheets/d/1TP8egieQMDbOFAOo-s6hmP7n-OhiKq1QsKWnCeosQ3Q/edit#gid=0';
+  // // const API_KEY2 = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
+  // const { rows2, isFetching2 } = useGoogleSpreadsheet(url2, API_KEY);
+  // console.log('rows2',)
 
   const handleChange = (_, newValue) => {
     setValue(newValue);
@@ -87,9 +87,9 @@ export default function SidePanel() {
         <Tab label="月別" {...a11yProps(1)} />
         <Tab label="全データ" {...a11yProps(2)} />
         <Tab label="ダウンロード" {...a11yProps(3)} />
-        <Tab label="達成率確認" {...a11yProps(4)} />
-        {/* <Tab label="Item Six" {...a11yProps(5)} />
-        <Tab label="Item Seven" {...a11yProps(6)} /> */}
+        <Tab label="達成率" {...a11yProps(4)} />
+        <Tab label="チャート" {...a11yProps(5)} />
+        {/* <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>
 
       {/* 概要 */}

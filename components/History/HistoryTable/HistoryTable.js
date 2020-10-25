@@ -8,23 +8,33 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 export default function HistoryTable(props) {
-  const rows = props.rows
-  let MonthlyList = []//TODO
+  const list = props.list
+  let HistoryList = []
+  let incomeList = []
   const tableData = () => {
-    if (rows.length > 1) {
-      for (let i = 0; i < 13; i++) {
-        MonthlyList.push(<TableBody>
-          <TableRow key={rows[i].id}>
-            <TableCell>{rows[i].Month}</TableCell>
-            <TableCell align="right">{rows[i].Balance}</TableCell>
-            <TableCell align="right">{rows[i].Long}</TableCell>
-            <TableCell align="right">{rows[i].Short}</TableCell>
-            <TableCell align="right">{rows[i].Swap}</TableCell>
+    if (list.length > 1) {
+      for (let i = 0; i < list.length; i++) {
+        HistoryList.push(<TableBody>
+          <TableRow key={i}>
+            <TableCell>{i + 1}</TableCell>
+            <TableCell align="right">{list[i]['売買']}</TableCell>
+            <TableCell align="right">{list[i]['売買損益']}</TableCell>
+            <TableCell align="right">{list[i]['新規決済']}</TableCell>
+            <TableCell align="right">{list[i]['新規約定価格']}</TableCell>
+            <TableCell align="right">{list[i]['注文数量']}</TableCell>
+            <TableCell align="right">{list[i]['新規約定価格']}</TableCell>
+            <TableCell align="right">{list[i]['約定日時']}</TableCell>
           </TableRow>
         </TableBody>)
+        incomeList.push(list[i]['売買損益'])
       }
     }
-    return MonthlyList;
+    const incomeListWithOutNull = incomeList.filter(v => v)
+    const incomeListWithNum = incomeListWithOutNull.map(Number)
+    const profit = '¥ ' + incomeListWithNum.map(Number).reduce(function (a, x) { return a + ((x || 0) - 0); }, 0).toLocaleString();
+
+    console.log('利益', profit)
+    return HistoryList;
   }
 
   return (
@@ -32,11 +42,14 @@ export default function HistoryTable(props) {
       <Table className="wrap" aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell />{/* 月 */}
-            <TableCell >Balance</TableCell>
-            <TableCell >Long</TableCell>
-            <TableCell >Short</TableCell>
-            <TableCell >Swap</TableCell>
+            <TableCell />{/* id */}
+            <TableCell >売買</TableCell>
+            <TableCell >売買損益</TableCell>
+            <TableCell >新規決済</TableCell>
+            <TableCell >新規約定価格</TableCell>
+            <TableCell >注文数量</TableCell>
+            <TableCell >新規約定価格</TableCell>
+            <TableCell >約定日時</TableCell>
           </TableRow>
         </TableHead>
         {tableData()}
