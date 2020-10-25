@@ -6,6 +6,7 @@ import styles from './Monthly.module.scss'
 const Monthly = (props) => {
   const isFetching = props.isFetching
   const rows = props.rows
+  console.log('', props)
   return isFetching ? (
     <>
       <CircularProgress className={styles.spinner} size={100} />

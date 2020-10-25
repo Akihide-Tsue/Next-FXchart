@@ -1,18 +1,40 @@
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+  decrement,
+  increment,
+  incrementByAmount,
+  incrementAsync,
+  selectCount,
+} from '../../app/counterSlice';
+
 import CircularProgress from '@material-ui/core/CircularProgress';
 import HistoryTable from './HistoryTable/HistoryTable'
 //css module
 // import styles from './History.module.scss'
 
 const History = (props) => {
-  const isFetching = props.isFetching2
-  const rows = props.rows2
+  const isFetching = props.isFetching
+  const rows = props.rows
+
+  const count = useSelector(selectCount);
+  const dispatch = useDispatch();
+  const [incrementAmount, setIncrementAmount] = useState('2');
+
   return isFetching ? (
     <>
-      <CircularProgress className={styles.spinner} size={100} />
+      <CircularProgress className="spinner" size={100} />
     </>
   ) : rows ? (
-      <>
-      <HistoryTable rows={rows} className={styles.table} />
+    <>
+      <button
+        className="button"
+        aria-label="Increment value"
+        onClick={() => dispatch(increment())}
+      >
+        +
+        </button>
+      <span className="value">{count}</span>
     </>
   ) :
       //取得できない/シートが空白の場合

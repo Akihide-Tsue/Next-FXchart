@@ -57,8 +57,8 @@ export default function SidePanel() {
   //APIデータ:12ヶ月分
   const shareUrl = 'https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit?usp=sharing';
   const API_KEY = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
-  const { rows1, isFetching1 } = useGoogleSpreadsheet(shareUrl, API_KEY);
-  console.log('rows1', rows1)
+  const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
+  console.log('rows', rows)
 
   //APIデータ:CSVデータ
   const url2 = 'https://docs.google.com/spreadsheets/d/1TP8egieQMDbOFAOo-s6hmP7n-OhiKq1QsKWnCeosQ3Q/edit#gid=0';
@@ -91,31 +91,42 @@ export default function SidePanel() {
         {/* <Tab label="Item Six" {...a11yProps(5)} />
         <Tab label="Item Seven" {...a11yProps(6)} /> */}
       </Tabs>
+
+      {/* 概要 */}
       <TabPanel value={value} index={0}>
         <Layout>
           <About />
         </Layout>
       </TabPanel>
+
+      {/* 月別 */}
       <TabPanel value={value} index={1}>
         <Layout>
-          <Monthly rows={rows1} isFetching={isFetching1} />
+          <Monthly rows={rows} isFetching={isFetching} />
         </Layout>
       </TabPanel>
+
+      {/* 全データ */}
       <TabPanel value={value} index={2}>
         <Layout>
-          <History rows={rows2} isFetching={isFetching2} />
+          <History rows={rows} isFetching={isFetching} />
         </Layout>
       </TabPanel>
+
+      {/* ダウンロード */}
       <TabPanel value={value} index={3}>
         <Layout>
-          <CSV rows={rows1} />
+          <CSV rows={rows} />
         </Layout>
       </TabPanel>
+
+      {/* 達成率確認 */}
       <TabPanel value={value} index={4}>
         <Layout>
           <Achievement />
         </Layout>
       </TabPanel>
+
       {/* <TabPanel value={value} index={5}>
         <Layout>
         </Layout>

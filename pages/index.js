@@ -1,5 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
+import { Provider } from 'react-redux';
+import store from '../app/store';
 
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -9,7 +11,7 @@ import SidePanel from '../components/SidePanel/SidePanel'
 
 export default function index() {
   return (
-    <>
+    <Provider store={store}>
       <Head>
         <title>FX収支</title>
         <link rel="icon" href="/favicon.ico" />
@@ -39,6 +41,6 @@ export default function index() {
           box-sizing: border-box;
         }
       `}</style>
-    </>
+    </Provider>
   )
 }

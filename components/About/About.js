@@ -4,7 +4,6 @@ const About = () => {
   return (
     <div>
       <div >作成中です。11月上旬完成予定</div>
-      <div >開発中にAPIの通信上限回数に達した場合はデータが取得できないかもしれません...</div>
       <div className={styles.title}>概要</div>
       <div>FX収支データを管理するアプリ</div>
       <div>使用技術： Next.js、 Firebase、 Gas</div>
