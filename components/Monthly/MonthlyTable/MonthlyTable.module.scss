@@ -1,0 +1,30 @@
+//全体
+.MonthlyWrap {
+  display: flex;
+  margin: 0 auto;
+}
+//テーブル
+.head {
+  background-color: #1976d2;
+}
+.cell {
+  color: #fff !important;
+  border: 1px solid #cccc !important;
+}
+.row {
+  border: 1px solid #ccc !important;
+}
+.body:nth-of-type(2n) {
+  background-color: #eee !important;
+}
+//input
+.textarea {
+  background-color: #fff;
+  color: #fff;
+}
+//ボタン
+.addBtn {
+  width: 40px !important;
+  height: 54px !important;
+  margin: 3px 0 0 10px !important;
+}
