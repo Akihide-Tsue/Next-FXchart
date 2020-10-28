@@ -29,7 +29,7 @@ const History = (props) => {
   const count = useSelector(selectCount);
   let list = useSelector(selectList);
   list = getStaticProps()
-  console.log('', list)
+  // console.log('', list)
   const dispatch = useDispatch();
   // const [incrementAmount, setIncrementAmount] = useState('2');
 
@@ -38,7 +38,8 @@ const History = (props) => {
       <CircularProgress className={styles.spinner} size={100} />
     </>
   ) : list? (
-    <>
+      <>
+        {/* TODO:redux 後で削除 */}
       <button
         className="button"
         aria-label="Increment value"
@@ -47,7 +48,7 @@ const History = (props) => {
         +
         </button>
         <div className="value">{count}</div>
-        {/* {console.log('rows', rows)} */}
+
         <div>{list[0]['通貨ペア']}</div>
         <HistoryTable list={list} className={styles.table} />
     </>

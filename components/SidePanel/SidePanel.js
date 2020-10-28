@@ -129,6 +129,7 @@ export default function SidePanel() {
 
       {/* <TabPanel value={value} index={5}>
         <Layout>
+            チャート
         </Layout>
       </TabPanel>
       <TabPanel value={value} index={6}>
