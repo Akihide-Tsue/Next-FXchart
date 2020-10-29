@@ -6,4 +6,13 @@
 }
 .SidePanel {
   min-width: 50px; //TODO:暫定 スマホ用に
+  width: 200px;
+}
+.panel {
+  width: -webkit-calc(100% - 200px);
+  margin-left: 1rem;
+}
+.label {
+  font-weight: bold !important;
+  font-size: 1.2rem !important;
 }

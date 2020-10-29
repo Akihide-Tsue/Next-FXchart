@@ -30,7 +30,7 @@ function TabPanel(props) {
     >
       {value === index && (
         <Box>
-          <Typography>{children}</Typography>
+          <Typography >{children}</Typography>
         </Box>
       )}
     </div>
@@ -83,56 +83,56 @@ export default function SidePanel() {
         indicatorColor="primary"
         selectionFollowsFocus={true}
       >
-        <Tab label="概要" {...a11yProps(0)} />
-        <Tab label="月別" {...a11yProps(1)} />
-        <Tab label="全データ" {...a11yProps(2)} />
-        <Tab label="ダウンロード" {...a11yProps(3)} />
-        <Tab label="達成率" {...a11yProps(4)} />
-        <Tab label="チャート" {...a11yProps(5)} />
-        {/* <Tab label="Item Seven" {...a11yProps(6)} /> */}
+        <Tab label="概要" className={styles.label} {...a11yProps(0)} />
+        <Tab label="月別" className={styles.label} {...a11yProps(1)} />
+        <Tab label="全データ" className={styles.label} {...a11yProps(2)} />
+        <Tab label="ダウンロード" className={styles.label} {...a11yProps(3)} />
+        <Tab label="達成率" className={styles.label} {...a11yProps(4)} />
+        <Tab label="チャート" className={styles.label} {...a11yProps(5)} />
+        {/* <Tab label="Item Seven" className={styles.label} {...a11yProps(6)} /> */}
       </Tabs>
 
       {/* 概要 */}
-      <TabPanel value={value} index={0}>
+      <TabPanel value={value} index={0} className={styles.panel}>
         <Layout>
           <About />
         </Layout>
       </TabPanel>
 
       {/* 月別 */}
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} className={styles.panel}>
         <Layout>
           <Monthly rows={rows} isFetching={isFetching} />
         </Layout>
       </TabPanel>
 
       {/* 全データ */}
-      <TabPanel value={value} index={2}>
+      <TabPanel value={value} index={2} className={styles.panel}>
         <Layout>
           <History rows={rows} isFetching={isFetching} />
         </Layout>
       </TabPanel>
 
       {/* ダウンロード */}
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={3} className={styles.panel}>
         <Layout>
           <CSV rows={rows} />
         </Layout>
       </TabPanel>
 
       {/* 達成率確認 */}
-      <TabPanel value={value} index={4}>
+      <TabPanel value={value} index={4} className={styles.panel}>
         <Layout>
           <Achievement />
         </Layout>
       </TabPanel>
 
-      {/* <TabPanel value={value} index={5}>
+      {/* <TabPanel value={value} index={5} className={styles.panel}>
         <Layout>
             チャート
         </Layout>
       </TabPanel>
-      <TabPanel value={value} index={6}>
+      <TabPanel value={value} index={6} className={styles.panel}>
         <Layout>
         </Layout>
       </TabPanel> */}
