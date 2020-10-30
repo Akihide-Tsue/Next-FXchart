@@ -49,7 +49,7 @@ const History = (props) => {
         </button>
         <div className="value">{count}</div>
 
-        <div>{list[0]['通貨ペア']}</div>
+        {/* <div>{list[0]['通貨ペア']}</div> */}
         <HistoryTable list={list} className={styles.table} />
     </>
   ) :

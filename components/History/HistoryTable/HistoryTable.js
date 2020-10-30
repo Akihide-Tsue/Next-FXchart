@@ -31,9 +31,8 @@ export default function HistoryTable(props) {
     }
     const incomeListWithOutNull = incomeList.filter(v => v)
     const incomeListWithNum = incomeListWithOutNull.map(Number)
-    const profit = '¥ ' + incomeListWithNum.map(Number).reduce(function (a, x) { return a + ((x || 0) - 0); }, 0).toLocaleString();
-
-    console.log('利益', profit)
+    const profit = '¥ ' + incomeListWithNum.map(Number)
+      .reduce(function (a, x) { return a + ((x || 0) - 0); }, 0).toLocaleString();
     return HistoryList;
   }
 

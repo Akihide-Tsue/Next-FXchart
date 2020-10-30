@@ -15,26 +15,3 @@
 .body:nth-of-type(2n) {
   background-color: #eee !important;
 }
-
-//プルダウン
-.monthSelect {
-  margin: 20px 5px 0 5px !important;
-  background-color: #fff;
-}
-.yearSelect {
-  background-color: #fff;
-  margin-top: 20px !important;
-}
-//メモ
-.textarea {
-  background-color: #fff;
-  margin-top: 20px !important;
-  margin-bottom: 20px !important;
-  width: 30% !important;
-}
-//送信ボタン
-.addBtn {
-  width: 40px !important;
-  height: 50px !important;
-  margin: 23px 0 0 10px !important;
-}

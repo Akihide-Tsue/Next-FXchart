@@ -84,11 +84,11 @@ export default function SidePanel() {
         selectionFollowsFocus={true}
       >
         <Tab label="概要" className={styles.label} {...a11yProps(0)} />
-        <Tab label="月別" className={styles.label} {...a11yProps(1)} />
+        <Tab label="月別データ" className={styles.label} {...a11yProps(1)} />
         <Tab label="全データ" className={styles.label} {...a11yProps(2)} />
         <Tab label="ダウンロード" className={styles.label} {...a11yProps(3)} />
         <Tab label="達成率" className={styles.label} {...a11yProps(4)} />
-        <Tab label="チャート" className={styles.label} {...a11yProps(5)} />
+        <Tab label="チャート分析" className={styles.label} {...a11yProps(5)} />
         {/* <Tab label="Item Seven" className={styles.label} {...a11yProps(6)} /> */}
       </Tabs>
 
@@ -123,16 +123,19 @@ export default function SidePanel() {
       {/* 達成率確認 */}
       <TabPanel value={value} index={4} className={styles.panel}>
         <Layout>
-          <Achievement />
+          {/* <Achievement /> */}
+          <div>複利％をチャートに表示</div>
         </Layout>
       </TabPanel>
 
-      {/* <TabPanel value={value} index={5} className={styles.panel}>
+    <TabPanel value={value} index={5} className={styles.panel}>
         <Layout>
-            チャート
+          <div>取引枚数</div>
+          <div>pip取れた</div>
+          <div>SL保持日数と平均線</div>
         </Layout>
       </TabPanel>
-      <TabPanel value={value} index={6} className={styles.panel}>
+      {/* <TabPanel value={value} index={6} className={styles.panel}>
         <Layout>
         </Layout>
       </TabPanel> */}
