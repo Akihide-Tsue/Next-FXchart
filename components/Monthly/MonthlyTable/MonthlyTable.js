@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -27,7 +26,7 @@ export default function MonthlyTable(props) {
             <TableCell align="right" className={styles.row}>{rows[i].合計}</TableCell>
             <TableCell align="right" className={styles.row}>{rows[i].月末資産額}</TableCell>
             <TableCell align="right" className={styles.row}>{rows[i].対資産伸率}</TableCell>
-            <TableCell align="center" className={styles.row}>{rows[i].Memo}</TableCell>
+            <TableCell className={styles.row}>{rows[i].Memo}</TableCell>
           </TableRow>
         </TableBody>)
       }
@@ -47,7 +46,7 @@ export default function MonthlyTable(props) {
               <TableCell align="center" className={styles.cell} >合計損益</TableCell>
               <TableCell align="center" className={styles.cell} >月末資産</TableCell>
               <TableCell align="center" className={styles.cell} >前月比</TableCell>
-              <TableCell align="center" align="center" className={styles.cell} >Memo</TableCell>
+              <TableCell align="center" className={styles.cell} >Memo</TableCell>
             </TableRow>
           </TableHead>
           {tableData()}

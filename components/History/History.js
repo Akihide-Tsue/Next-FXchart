@@ -23,8 +23,7 @@ function getStaticProps() {
 }
 
 const History = (props) => {
-  const isFetching = props.isFetching
-  const rows = props.rows
+  const { isFetching, rows } = props
 
   const count = useSelector(selectCount);
   let list = useSelector(selectList);

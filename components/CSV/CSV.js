@@ -1,7 +1,8 @@
 import CsvDownload from 'react-json-to-csv'
 
 const CSV = (props) => {
-  const rows = props.rows
+  const { rows } = props
+
   return (rows ? (<>
     <div>APIで取得しているCSVデータをダウンロード</div>
     <CsvDownload data={rows} />

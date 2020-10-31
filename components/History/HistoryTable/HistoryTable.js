@@ -8,7 +8,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 export default function HistoryTable(props) {
-  const list = props.list
+  const { list } = props
   let HistoryList = []
   let incomeList = []
   const tableData = () => {
