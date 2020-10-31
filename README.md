@@ -6,4 +6,3 @@ npm run dev
 
 ### 備忘
 ・yarn run export
-・fd

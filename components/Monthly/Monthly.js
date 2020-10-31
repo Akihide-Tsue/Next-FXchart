@@ -147,9 +147,6 @@ const Monthly = (props) => {
           name='name3'
           inputRef={register({ required: true, maxLength: 50 })}
         />
-        {/* TODO:エラーメッセージにcssあてる */}
-        {errors.name3 && errors.name3.type === 'required' && '入力して下さい'}
-        {errors.name3 && errors.name3.type === 'maxLength' && '50文字以下で登録して下さい'}
         {/* メモ送信 */}
         <Button
           variant="contained"
@@ -157,8 +154,10 @@ const Monthly = (props) => {
           className={styles.addBtn}
           type="submit"
         >
-          登録
+            登録
       </Button >
+          {errors.name3 && errors.name3.type === 'required' && <div className={styles.error}>入力して下さい</div>}
+          {errors.name3 && errors.name3.type === 'maxLength' && <div className={styles.error}>50文字以下で登録して下さい</div>}
       </form>
 
       {/* テーブルコンポーネント */}

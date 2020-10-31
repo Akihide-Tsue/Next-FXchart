@@ -35,9 +35,9 @@ const History = (props) => {
     <>
       <CircularProgress className={styles.spinner} size={100} />
     </>
-  ) : list? (
-      <>
-        {/* TODO:redux 後で削除 */}
+  ) : list ? (
+    <>
+      {/* TODO:redux 後で削除 */}
       <button
         className="button"
         aria-label="Increment value"
@@ -45,10 +45,11 @@ const History = (props) => {
       >
         +
         </button>
-        <div className="value">{count}</div>
+      <div className="value">{count}</div>
+      <div >redux確認用</div>
 
-        {/* <div>{list[0]['通貨ペア']}</div> */}
-        <HistoryTable list={list} className={styles.table} />
+      {/* <div>{list[0]['通貨ペア']}</div> */}
+      <HistoryTable list={list} className={styles.table} />
     </>
   ) :
       //取得できない/シートが空白の場合
