@@ -128,7 +128,7 @@ export default function SidePanel() {
         </Layout>
       </TabPanel>
 
-    <TabPanel value={value} index={5} className={styles.panel}>
+      <TabPanel value={value} index={5} className={styles.panel}>
         <Layout>
           <div>取引枚数</div>
           <div>pip取れた</div>

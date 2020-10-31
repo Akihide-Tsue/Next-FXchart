@@ -30,7 +30,6 @@ const History = (props) => {
   list = getStaticProps()
   // console.log('', list)
   const dispatch = useDispatch();
-  // const [incrementAmount, setIncrementAmount] = useState('2');
 
   return !list ? (
     <>
