@@ -20,12 +20,12 @@ export default function MonthlyTable(props) {
       for (let i = 0; i < 13; i++) {
         MonthlyList.push(<TableBody className={styles.body}>
           <TableRow key={rows[i].id} >
-            <TableCell align="center" className={styles.row}>{rows[i].月}</TableCell>
-            <TableCell align="right" className={styles.row}>{rows[i].取引損益}</TableCell>
-            <TableCell align="right" className={styles.row}>{rows[i].スワップ}</TableCell>
-            <TableCell align="right" className={styles.row}>{rows[i].合計}</TableCell>
-            <TableCell align="right" className={styles.row}>{rows[i].月末資産額}</TableCell>
-            <TableCell align="right" className={styles.row}>{rows[i].対資産伸率}</TableCell>
+            <TableCell align="center" className={styles.row}>{rows[i]['月']}</TableCell>
+            <TableCell align="right" className={styles.row}>{rows[i]['取引損益']}</TableCell>
+            <TableCell align="right" className={styles.row}>{rows[i]['スワップ']}</TableCell>
+            <TableCell align="right" className={styles.row}>{rows[i]['合計']}</TableCell>
+            <TableCell align="right" className={styles.row}>{rows[i]['月末資産額']}</TableCell>
+            <TableCell align="right" className={styles.row}>{rows[i]['対資産伸率']}</TableCell>
             <TableCell className={styles.row}>{rows[i].Memo}</TableCell>
           </TableRow>
         </TableBody>)
@@ -35,7 +35,7 @@ export default function MonthlyTable(props) {
   }
 
   return (
-    <div className={styles.MonthlyWrap}>
+    <div>
       <TableContainer className={styles.wrap} component={Paper} >
         <Table aria-label="simple table">
           <TableHead className={styles.head}>

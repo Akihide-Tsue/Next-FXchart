@@ -1,21 +1,22 @@
-.head {
-  font-size: 2rem;
-  margin: 1rem 0;
-  font-weight: bold;
-  color: #3f52b5;
-}
+// .head {
+//   font-size: 2rem;
+//   margin: 1rem 0;
+//   font-weight: bold;
+//   color: #3f52b5;
+// }
 .title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 1rem 0;
 }
-.github { //TODO:css共通化
-  margin-top: 10px;
+.download {
   display: inline-block;
   padding: 16px 32px;
   cursor: pointer;
   background-color: #3f52b5;
   border-radius: 4px;
   border: 0px;
+  color: #ffffff;
+  text-decoration: none;
   font-size: 18px;
   font-weight: bold;
   line-height: 1.2em;
@@ -23,9 +24,5 @@
   transition: 0.3s;
   &:hover {
     opacity: 0.85;
-  }
-  .link {
-    color: #ffffff;
-    text-decoration: none;
   }
 }

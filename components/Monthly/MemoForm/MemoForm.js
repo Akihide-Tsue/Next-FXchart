@@ -63,7 +63,7 @@ const MemoForm = (props) => {
       .then(() => {
         console.log('登録成功', value) // 成功時
         setOpen(true);//登録完了メッセージ
-        setTimeout(location.reload(), 6000);
+        setTimeout(location.reload(), 10000);
       })
       .catch((error) => {
         console.log('登録失敗', error) // 失敗時

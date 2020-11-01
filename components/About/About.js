@@ -8,7 +8,15 @@ const About = () => {
       <div className={styles.title}>概要</div>
       <div>使用技術：  </div>
       <div>フロント：React(Next.js)、バックエンド：Gas、DB：スプレッドシート、サーバー：Firebase、 </div>
-      <div><a href={'https://github.com/Akihide-Tsue/Next-FXchart'} target="_blank" rel="noopener noreferrer">GitHubのリポジトリ </a></div>
+      <div className={styles.github}>
+        <a
+          href={'https://github.com/Akihide-Tsue/Next-FXchart'}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.link}>
+          GitHubのリポジトリ
+        </a>
+      </div>
       {/* <div><a href="https://script.google.com/d/1giLwqVEr1rRPbuRa2EoLQcoZtItsYfyx8QF_E00cuuzEA4bTfoSovSB1/edit?uiv=2&mid=ACjPJvElQeUpX-ueMgM-LRnpPZTjEUlteOXgmIxqci3b3sERhOmt-9CCF1AKj_jKnGz5smjBKH01FgK5r_fMEZsvXYa1yxnWv3uuAkIyBdbIMgaY0ICtPi8AJbIlmjezSFOwq8xwf30ovbyPzIt7meOd4lMb1IbwE5RUWA6U8uuUtdYnbTkRoSiLtNPI2w&splash=yes" target="_blank" rel="noopener noreferrer">作成したGASコード</a></div>
       <div><a href="https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit#gid=1853289082" target="_blank" rel="noopener noreferrer">作成したスプレッドシートデータ</a></div> */}
       <div className={styles.title}>目次</div>

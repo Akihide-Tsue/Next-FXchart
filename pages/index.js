@@ -15,6 +15,8 @@ export default function index() {
       <Head>
         <title>FX収支</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="FX収支データを管理するアプリです。
+        YJFXのWebページから「期間取引」CSVをダウンロードし使用します。" />
       </Head>
       <AppBar className="header">
         <Toolbar>
