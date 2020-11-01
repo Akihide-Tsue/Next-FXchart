@@ -38,6 +38,7 @@ const History = (props) => {
   ) : list ? (
     <>
       {/* TODO:redux 後で削除 */}
+      <div >redux確認用</div>
       <button
         className="button"
         aria-label="Increment value"
@@ -46,7 +47,6 @@ const History = (props) => {
         +
         </button>
       <div className="value">{count}</div>
-      <div >redux確認用</div>
 
       {/* <div>{list[0]['通貨ペア']}</div> */}
       <HistoryTable list={list} className={styles.table} />
