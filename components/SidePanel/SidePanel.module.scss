@@ -15,4 +15,7 @@
 .label {
   font-weight: bold !important;
   font-size: 1.2rem !important;
+  &:hover{
+    background-color: rgb(222, 225, 250)!important;
+  }
 }

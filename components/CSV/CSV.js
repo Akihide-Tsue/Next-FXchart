@@ -6,7 +6,10 @@ const CSV = (props) => {
 
   return (rows ? (<>
     <div className={styles.title}>APIで取得しているCSVデータをダウンロード</div>
-    <CsvDownload data={rows} className={styles.download} />
+    <CsvDownload
+      data={rows}
+      filename="FX-SVC"
+      className={styles.download} />
   </>
   ) :
     //CSVが取得できなかった場合

@@ -25,6 +25,7 @@ function TabPanel(props) {
       role="tabpanel"
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
+      className={styles.label}
       aria-labelledby={`vertical-tab-${index}`}
       {...other}
     >
