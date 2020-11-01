@@ -8,7 +8,8 @@
   font-size: 2rem;
   margin: 1rem 0;
 }
-.github { //TODO:css共通化
+.github {
+  //TODO:css共通化
   margin-top: 10px;
   display: inline-block;
   padding: 16px 32px;
@@ -19,10 +20,12 @@
   font-size: 18px;
   font-weight: bold;
   line-height: 1.2em;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
   &:hover {
-    opacity: 0.85;
+    opacity: 0.9;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 10px 0px rgba(0, 0, 0, 0.12);
   }
   .link {
     color: #ffffff;

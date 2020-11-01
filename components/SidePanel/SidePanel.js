@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Monthly from '../Monthly/Monthly';
 import About from '../About/About';
 import CSV from '../CSV/CSV';
-import Achievement from '../Achievement/Achievement';
+import AssetChart from '../AssetChart/AssetChart';
 import History from '../History/History';
 //API
 import useGoogleSpreadsheet from 'use-google-spreadsheet';
@@ -124,16 +124,16 @@ export default function SidePanel() {
       {/* 達成率確認 */}
       <TabPanel value={value} index={4} className={styles.panel}>
         <Layout>
-          {/* <Achievement /> */}
-          <div>複利％をチャートに表示</div>
+          <AssetChart />
         </Layout>
       </TabPanel>
 
       <TabPanel value={value} index={5} className={styles.panel}>
         <Layout>
-          <div>取引枚数</div>
-          <div>pip取れた</div>
-          <div>SL保持日数と平均線</div>
+          <div>実装予定</div>
+          <div>SL別　取引枚数をチャート化</div>
+          <div>SL別　取れたpipをチャート化</div>
+          <div>SL別　保持日数と平均線をチャート化</div>
         </Layout>
       </TabPanel>
       {/* <TabPanel value={value} index={6} className={styles.panel}>
