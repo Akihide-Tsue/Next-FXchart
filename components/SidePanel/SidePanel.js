@@ -61,12 +61,6 @@ export default function SidePanel() {
   const { rows, isFetching } = useGoogleSpreadsheet(shareUrl, API_KEY);
   console.log('rows', rows)
 
-  //APIデータ:CSVデータ
-  // const url2 = 'https://docs.google.com/spreadsheets/d/1TP8egieQMDbOFAOo-s6hmP7n-OhiKq1QsKWnCeosQ3Q/edit#gid=0';
-  // // const API_KEY2 = 'AIzaSyDlyJ3biGjglA8NFjvDYoZNsiV0FKr8CMc';
-  // const { rows2, isFetching2 } = useGoogleSpreadsheet(url2, API_KEY);
-  // console.log('rows2',)
-
   const handleChange = (_, newValue) => {
     setValue(newValue);
   };
@@ -88,9 +82,9 @@ export default function SidePanel() {
         <Tab label="月別データ" className={styles.label} {...a11yProps(1)} />
         <Tab label="全データ" className={styles.label} {...a11yProps(2)} />
         <Tab label="ダウンロード" className={styles.label} {...a11yProps(3)} />
-        <Tab label="達成率" className={styles.label} {...a11yProps(4)} />
-        <Tab label="チャート分析" className={styles.label} {...a11yProps(5)} />
-        {/* <Tab label="Item Seven" className={styles.label} {...a11yProps(6)} /> */}
+        <Tab label="資産推移" className={styles.label} {...a11yProps(4)} />
+        <Tab label="取引分析" className={styles.label} {...a11yProps(5)} />
+        <Tab label="証拠金維持率" className={styles.label} {...a11yProps(6)} />
       </Tabs>
 
       {/* 概要 */}
@@ -121,13 +115,14 @@ export default function SidePanel() {
         </Layout>
       </TabPanel>
 
-      {/* 達成率確認 */}
+      {/* 資産推移 */}
       <TabPanel value={value} index={4} className={styles.panel}>
         <Layout>
           <AssetChart />
         </Layout>
       </TabPanel>
 
+      {/* 取引分析 */}
       <TabPanel value={value} index={5} className={styles.panel}>
         <Layout>
           <div>実装予定</div>
@@ -136,10 +131,15 @@ export default function SidePanel() {
           <div>SL別　保持日数と平均線をチャート化</div>
         </Layout>
       </TabPanel>
-      {/* <TabPanel value={value} index={6} className={styles.panel}>
+
+      {/* 証拠金維持率　*/}
+      <TabPanel value={value} index={6} className={styles.panel}>
         <Layout>
+          <div>実装予定</div>
+          <div>1枚あたりの比率、最適取引数量計算</div>
+          <div>現在のZarレートを表示（取得API検討）</div>
         </Layout>
-      </TabPanel> */}
+      </TabPanel>
     </div>
   );
 }

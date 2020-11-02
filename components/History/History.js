@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   increment,//SliceでのAction
@@ -23,12 +23,11 @@ function getStaticProps() {
 }
 
 const History = (props) => {
-  const { isFetching, rows } = props
+  // const { isFetching, rows } = props
 
   const count = useSelector(selectCount);
   let list = useSelector(selectList);
   list = getStaticProps()
-  // console.log('', list)
   const dispatch = useDispatch();
 
   return !list ? (

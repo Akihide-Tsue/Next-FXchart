@@ -1,5 +1,5 @@
 import React from 'react'
-import Head from 'next/head'
+import Head from '../components/Head';
 import { Provider } from 'react-redux';
 import store from '../app/store';
 
@@ -12,12 +12,13 @@ import SidePanel from '../components/SidePanel/SidePanel'
 export default function index() {
   return (
     <Provider store={store}>
-      <Head>
-        <title>FX収支</title>
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="description" content="FX収支データを管理するアプリです。
-        YJFXのWebページから「期間取引」CSVをダウンロードし使用します。" />
-      </Head>
+      <Head
+        title={'FX収支'}
+        description={'YJFXの 約定履歴>CSVダウンロード からデータを取得し取引の傾向を分析するツール'}
+        keyword={'FX,トレード分析'}
+        image={'https://tsue-gatsby.web.app/static/headerIcon-08458926b8520975948d225126d4056b.png'}
+        url={'https://fx-chart-next.web.app/'}
+      />
       <AppBar className="header">
         <Toolbar>
           <Typography variant="h6" color="inherit" noWrap>

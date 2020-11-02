@@ -23,12 +23,8 @@ const About = () => {
       <div>３．オリジナルのCSVをダウンロード</div>
       <div>４．月別の達成目標額をチャート管理、複利%を計算しチャートで可視化</div>
       <div>５．取引状況をチャート分析（２のデータを加工）</div>
-      <div>６．その他..... (予定：fxチャート)</div>
-
-
-
-      {/* <div><a href="https://script.google.com/d/1giLwqVEr1rRPbuRa2EoLQcoZtItsYfyx8QF_E00cuuzEA4bTfoSovSB1/edit?uiv=2&mid=ACjPJvElQeUpX-ueMgM-LRnpPZTjEUlteOXgmIxqci3b3sERhOmt-9CCF1AKj_jKnGz5smjBKH01FgK5r_fMEZsvXYa1yxnWv3uuAkIyBdbIMgaY0ICtPi8AJbIlmjezSFOwq8xwf30ovbyPzIt7meOd4lMb1IbwE5RUWA6U8uuUtdYnbTkRoSiLtNPI2w&splash=yes" target="_blank" rel="noopener noreferrer">作成したGASコード</a></div>
-      <div><a href="https://docs.google.com/spreadsheets/d/13HnYM4pzctjnXAruWXo6aG732X05ga3vGhFgRT7T8Os/edit#gid=1853289082" target="_blank" rel="noopener noreferrer">作成したスプレッドシートデータ</a></div> */}
+      <div>６．最適な証拠金維持率を計算　</div>
+      <div>７．その他..... (予定：fxチャート)</div>
 
       <div className={styles.title}>機能（検討中も）</div>
       <div>１．スプレッドシートにメモをputし登録。</div>
