@@ -13,11 +13,10 @@ export default function index() {
   return (
     <Provider store={store}>
       <Head
-        title={'FX収支'}
+        title={'FX取引分析ツール'}
         description={'YJFXの 約定履歴>CSVダウンロード からデータを取得し取引の傾向を分析するツール'}
         keyword={'FX,トレード分析'}
-        image={'https://tsue-gatsby.web.app/static/headerIcon-08458926b8520975948d225126d4056b.png'}
-        url={'https://fx-chart-next.web.app/'}
+        url={'https://fx-chart-next.web.app'}
       />
       <AppBar className="header">
         <Toolbar>
