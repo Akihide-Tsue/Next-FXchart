@@ -26,7 +26,7 @@ const MemoForm = (props) => {
   //月プルダウン
   const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const presentMonth = new Date().getMonth()
-  const [month, setMonth] = React.useState(presentMonth);
+  const [month, setMonth] = React.useState(presentMonth); //TODO:React.useState()でOK?
   const handleChangeMonth = (event) => {
     setMemoData("") //TODO:呼ばれてない
     setMonth(event.target.value);

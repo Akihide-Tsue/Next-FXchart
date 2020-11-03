@@ -1,14 +1,14 @@
 import * as React from 'react';
 import Head from 'next/head';
 
-export default ({ title, description, keyword, image, url }) => {
+export default ({ title, description, keyword, url }) => {
   return (
     <Head>
       <title>{title}</title>
-      <meta charset="utf-8" />
+      <meta charSet="utf-8" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content="blog" />
+      <meta property="og:type" content="website" />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={"/favicon.png"} />
       <meta property="og:site_name" content={title} />

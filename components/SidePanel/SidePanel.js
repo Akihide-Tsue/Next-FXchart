@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Monthly from '../Monthly/Monthly';
 import About from '../About/About';
 import CSV from '../CSV/CSV';
-import AssetChart from '../AssetChart/AssetChart';
+import Asset from '../Asset/Asset';
 import History from '../History/History';
 //API
 import useGoogleSpreadsheet from 'use-google-spreadsheet';
@@ -118,7 +118,7 @@ export default function SidePanel() {
       {/* 資産推移 */}
       <TabPanel value={value} index={4} className={styles.panel}>
         <Layout>
-          <AssetChart />
+          <Asset />
         </Layout>
       </TabPanel>
 
